@@ -1,6 +1,6 @@
 <header>
-  <div>USD to UAH: {{ usdRate }}</div>
-  <div>EUR to UAH: {{ eurRate }}</div>
+  <div>$ (USD) to UAH: {{ usdRate }}</div>
+  <div>€ (EUR) to UAH: {{ eurRate }}</div>
 </header>
 
 <div *ngIf="errorMessage" class="error-message">
@@ -10,17 +10,25 @@
 <div class="currency-input">
   <input type="number" [(ngModel)]="amount1" (input)="convertCurrency()">
   <select [(ngModel)]="currency1" (change)="convertCurrency()">
-    <option value="UAH">UAH</option>
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
+    <option value="UAH">₴ UAH</option>
+    <option value="USD">$ USD</option>
+    <option value="EUR">€ EUR</option>
   </select>
 </div>
 
 <div class="currency-input">
   <input type="number" [(ngModel)]="amount2" (input)="convertCurrency()">
   <select [(ngModel)]="currency2" (change)="convertCurrency()">
-    <option value="UAH">UAH</option>
-    <option value="USD">USD</option>
-    <option value="EUR">EUR</option>
+    <option value="UAH">₴ UAH</option>
+    <option value="USD">$ USD</option>
+    <option value="EUR">€ EUR</option>
   </select>
 </div>
+
+<div class="center-button">
+  <button (click)="swapCurrencies()">Swap Currencies</button>
+</div>
+
+
+
+

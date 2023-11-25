@@ -67,4 +67,12 @@ export class AppComponent implements OnInit {
         return 1;
     }
   }
+
+  swapCurrencies() {
+    const tempCurrency = this.currency1;
+
+    this.currency1 = this.currency2;
+    this.currency2 = tempCurrency;
+    this.convertCurrency();
+  }
 }
