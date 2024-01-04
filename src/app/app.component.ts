@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
   amount2: number = 1;
   currency1: string = 'UAH';
   currency2: string = 'UAH';
+  plnRate: number = 0;
   errorMessage: string = '';
 
   constructor(private http: HttpClient) {}
@@ -35,8 +36,10 @@ export class AppComponent implements OnInit {
       (data: any[]) => {
         const usd = data.find(currency => currency.cc === 'USD');
         const eur = data.find(currency => currency.cc === 'EUR');
+        const pln = data.find(currency => currency.cc === 'PLN');
         this.usdRate = usd ? usd.rate : 0;
         this.eurRate = eur ? eur.rate : 0;
+        this.plnRate = pln ? pln.rate : 0;
         this.errorMessage = '';
       },
       error => {
